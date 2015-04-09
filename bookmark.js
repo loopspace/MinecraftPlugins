@@ -7,6 +7,7 @@ var _help = function() {
 		'/jsp bookmark save {bookmark} : bookmark current location as {bookmark} providing {bookmark} does not exist',
 		'/jsp bookmark forcesave {bookmark} : bookmark current location as {bookmark}',
 		'/jsp bookmark update {bookmark} : update {bookmark} to current location',
+		'/jsp bookmark remove {bookmark} : removes {bookmark}',
 		'/jsp bookmark to {bookmark} : teleport to {bookmark}',
     '/jsp bookmark todeath : teleport to last death location',
 		'/jsp bookmark list : list all bookmarks',
@@ -85,7 +86,7 @@ var _todeath = function(me) {
 
 events.playerDeath(_death);
 
-var _delete = function(bk,me) {
+var _remove = function(bk,me) {
 	if (typeof bk == 'undefined') {
 		echo(me, 'You must specify a bookmark');
 		return;
@@ -116,7 +117,7 @@ var bookmarks = plugin('bookmarks', {
 	update: _update,
 	forcesave: _forcesave,
 	todeath: _todeath,
-	delete: _delete
+	remove: _remove
 }, true);
 
 var options = {
@@ -149,8 +150,8 @@ var options = {
 	'help': function(params,sender) {
 		echo(sender,bookmarks.help());
 	},
-	'delete': function(bk,sender) {
-		bookmarks.delete(bk,sender);
+	'remove': function(bk,sender) {
+		bookmarks.remove(bk,sender);
 	}
 };
 
