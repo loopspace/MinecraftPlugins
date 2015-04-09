@@ -1,6 +1,7 @@
 # Minecraft Scripts
 
-This repository is for scripts and plugins using the [ScriptCraft]() mod for
+This repository is for scripts and plugins using the
+[ScriptCraft](http://scriptcraftjs.org/) mod for
 Minecraft.  This mod enables scripting using javascript.
 
 # Bookmarks
